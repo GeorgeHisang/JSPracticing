@@ -190,23 +190,24 @@
       }
       var thisRoundeResult = a + "A" + b + "B";
       var target = document.getElementById("guessResult");
-        
+      var li =document.createElement("li");
       li.className="list-group-item";
       if(thisRoundeResult!="4A0B"){
         li.innerHTML = "<span class='label label-danger'>"+thisRoundeResult+"</span>"+ " " + thisRoundeAnswer;
+        target.appendChild(li);
       }
       else{
-        sucessOrNot("label-sucess");
-        if (confirm("你猜對了!!答案為:"+thisRoundeAnswer)) {
+        li.innerHTML = "<span class='label label-success'>"+thisRoundeResult+"</span>"+ " " + thisRoundeAnswer;
+        if (confirm("你猜對了!!答案為:"+thisRoundeAnswer+"是否重新遊玩")) {
         startGame();
       }
         
       }
-      target.appendChild(li);
+      
     }
     //重購失敗
     function sucessOrNot(thisRoundRT){
-      li.innerHTML = "<span class='label" +thisRoundRT+"'>"+thisRoundeResult+"</span>"+ " " + thisRoundeAnswer;
+      
     }
   </script>
 </body>
